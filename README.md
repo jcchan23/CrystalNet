@@ -46,7 +46,7 @@ The structure of `./data/DComPET`:
 
 (2021.7.19 Notes: The dataset will be released later!)
 
-Tips: The most time-consuming step is generating the `graph_cache.pickle` from the crystal graph files to the crystal graph dict object, thus we cache all dict object instead of generating it during training step.
+**Tips:** The most time-consuming step is generating the `graph_cache.pickle` from the crystal graph files to the crystal graph dict object, thus we cache all dict object instead of generating it during training step.
 
 ## Training
 
@@ -58,7 +58,7 @@ where the model will be stored at `./ckpt/ensemble_band_gap`, the training log w
 
 We also provide a bash script to run all training folds in parallel, please refer to `train_band_gap_*.sh`.
 
-Some tips when training the model:
+**Some tips when training the model:**
 1. If you execute the code in the first time, it will generate `train_fold_{args.run_fold}_crystalnet.pickle`, `valid_fold_{args.run_fold}_crystalnet.pickle` and `test_crystalnet.pickle`, which will cost a few of time. And it will reload the pickle files when you executing the code for the second time, which help reduce the training time.
 
 2. Hyperparameters could be found in the `./chemprop/parsing.py`, some key hyperparameters are listed below:
