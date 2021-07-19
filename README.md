@@ -27,7 +27,7 @@ The `Material Project` dataset can be referred to the [figshare](https://figshar
 ## Preprocess
 The key for preprocessing a new dataset with fitting our model is that generating `graph_cache.pickle` and `property.csv`.
 
-The structure of `./data/material_project`:
+The structure of `data/material_project`:
 
 You can download a zip files from the [google drive link](https://drive.google.com/drive/folders/1QlNO4Vs0Y28Zfnetzr9MJtakYJ_hwUn7?usp=sharing).
 
@@ -42,7 +42,7 @@ You can download a zip files from the [google drive link](https://drive.google.c
 - `property.csv`: the table of crystal name with corresponding properties(band gap, total energy, per atom energy, formation energy, efermi, magnetization), a column with all 0's means without recording this property.
 - `structures.tar.gz`: all crystal graph files with the format of `.poscar`.
 
-The structure of `./data/DComPET`:
+The structure of `data/DComPET`:
 
 **(2021.7.19 Notes: The dataset will be released later!)**
 
@@ -54,14 +54,14 @@ For the band_gap property, run:
 
 `nohup python -u train.py --gpu 0 --seed 0 --data_path ./data/material_project --train_path ./data/material_project --dataset_name band_gap --dataset_type regression --run_fold 1 --metric mae --save_dir ./ckpt/ensemble_band_gap --epochs 200 --init_lr 1e-4 --max_lr 3e-4 --final_lr 1e-4 --no_features_scaling --show_individual_scores > ./log/fold_1_band_gap.log 2>&1`
 
-where the model will be stored at `./ckpt/ensemble_band_gap`, the training log will be stored at `./log`.
+where the model will be stored at `ckpt/ensemble_band_gap`, the training log will be stored at `log`.
 
 We also provide a bash script to run all training folds in parallel, please refer to `train_band_gap_*.sh`.
 
 **Some tips when training the model:**
 1. If you execute the code in the first time, it will generate `train_fold_{args.run_fold}_crystalnet.pickle`, `valid_fold_{args.run_fold}_crystalnet.pickle` and `test_crystalnet.pickle`, which will cost a few of time. And it will reload the pickle files when you executing the code for the second time, which help reduce the training time.
 
-2. Hyperparameters could be found in the `./chemprop/parsing.py`, some key hyperparameters are listed below:
+2. Hyperparameters could be found in the `chemprop/parsing.py`, some key hyperparameters are listed below:
 - `--radius`: The crystal neighbor radius, it will effect the number of neighbor atoms. If you revise this parameter, please regenerate the `.pickle` files in the step 1.
 - `--rbf_parameters`: The key parameters for generating the Gaussian basis vectors. If you revise this parameter, please regenerate the `.pickle` files in the step 1.
 - `--max_num_neighbors`: The maximum number of neighbors for each atoms. If you revise this parameter, please regenerate the `.pickle` files in the step 1.
