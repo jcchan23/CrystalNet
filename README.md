@@ -74,6 +74,7 @@ Some tips when training the model:
 ## Predict
 
 For the band_gap property, run:
+
 `nohup python -u predict.py --gpu 0 --seed 0 --data_path ./data/material_project --test_path ./data/material_project --dataset_name band_gap --checkpoint_dir ./ckpt/ensemble_band_gap/ --no_features_scaling > ./log/predict_band_gap.log 2>&1 &`
 
 where the code will generate each fold of prediction in the `{args.test_path}/seed_{args.seed}/predict_{args.dataset_name}_fold_{fold_num}_crystalnet.csv` and ensemble all predictions for the final prediction in the `{args.test_path}/seed_{args.seed}/predict_{args.dataset_name}_crystalnet.csv`.
