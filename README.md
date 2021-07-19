@@ -96,4 +96,5 @@ You can come to our website for more related applications!
 ## Citation
 
 Please cite the following paper if you use this code in your work.
-(Under developed...)
+
+(Under developed)
