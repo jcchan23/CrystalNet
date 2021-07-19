@@ -44,7 +44,7 @@ You can download a zip files from the [google drive link](https://drive.google.c
 
 The structure of `./data/DComPET`:
 
-(2021.7.19 Notes: The dataset will be released later!)
+**(2021.7.19 Notes: The dataset will be released later!)**
 
 **Tips:** The most time-consuming step is generating the `graph_cache.pickle` from the crystal graph files to the crystal graph dict object, thus we cache all dict object instead of generating it during training step.
 
