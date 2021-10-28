@@ -1,6 +1,6 @@
 # CrystalNet
 
-Source code for our paper [Enhancing Material Property Prediction by Leveraging Large-scale Computational Database and Machine Learning](#)
+Source code for our paper [Leveraging Large-scale Computational Database and Deep Learning for Accurate Prediction of Material Properties](#)
 
 The code was built based on [CMPNN](https://github.com/SY575/CMPNN) and optimized for the crystal graph. Thanks a lot for their code sharing!
 
