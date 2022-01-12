@@ -96,5 +96,11 @@ You can come to our website for more related applications!
 ## Citation
 
 Please cite the following paper if you use this code in your work.
-
-(Under developed)
+```bibtex
+@article{chen2021leveraging,
+  title={Leveraging Large-scale Computational Database and Deep Learning for Accurate Prediction of Material Properties},
+  author={Chen, Pin and Chen, Jianwen and Yan, Hui and Mo, Qing and Xu, Zexin and Liu, Jinyu and Zhang, Wenqing and Yang, Yuedong and Lu, Yutong},
+  journal={arXiv preprint arXiv:2112.14429},
+  year={2021}
+}
+```
